@@ -2,8 +2,8 @@ require "formula"
 
 class Muttprint < Formula
   homepage "http://muttprint.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/muttprint/muttprint/muttprint-0.72d/muttprint-0.72d.tar.gz"
-  sha1 "532a1c7ed019b0b50c78caf7eeb17f5cd34d3d1e"
+  url "https://downloads.sourceforge.net/project/muttprint/muttprint/muttprint-0.73/muttprint-0.73.tar.gz"
+  sha1 "75a02707c8a6f84d926952edcd246bd2a9e5e848"
 
   def install
     system "make", "-B", "prefix=#{prefix}", "docdir=#{share}/doc/packages/", "install"
