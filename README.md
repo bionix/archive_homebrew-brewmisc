@@ -26,5 +26,11 @@ Installs muttprint package mess
 brew install bionix/brewmisc/muttprint
 ```
 
+### tokumx-bin
+Installs tokumx-bin
+```
+brew install bionix/brewmisc/tokumx-bin
+```
+
 ## Author
 Markus 'bionix' Rekkenbeil
