@@ -43,6 +43,8 @@ class Mutt < Formula
   option "with-ignore-thread-patch", "Apply ignore-thread patch"
   option "with-confirm-attachment-patch", "Apply confirm attachment patch"
   option 'with-hash-fingerprints-patch', 'Apply show more hashes on certs patch'
+  option 'with-trash-patch', 'Apply trash folder patch'
+  option 'with-pgp-verbose-mime-patch', 'Apply PGP verbose mime patch'
   option "with-sidebar-patch", "Apply sidebar (folder list) patch" unless build.head?
 
   depends_on "autoconf" => :build
@@ -80,6 +82,20 @@ class Mutt < Formula
     patch do
       url 'http://lunar-linux.org/~tchan/mutt/patch-1.5.24.sidebar.20150917.txt'
       sha256 'ddc2baeb4d882ac32b5c54965dfb3a9b3164b2387888be33f4c1d16ebbea5b98'
+    end
+  end
+
+  if build.with? "with-trash-patch"
+    patch do
+      url "https://gist.githubusercontent.com/tlvince/5741641/raw/c926ca307dc97727c2bd88a84dcb0d7ac3bb4bf5/mutt-attach.patch"
+      sha256 "ce964144264a7d4f121e7a2692b1ea92ebea5f03089bfff6961d485f3339c3b8"
+    end
+  end
+
+  if build.with? "with-pgp-verbose-mime-patch"
+    patch do
+      url "https://raw.githubusercontent.com/psych0tik/mutt/73c09bc56e79605cf421a31c7e36958422055a20/debian/patches/features-old/patch-1.5.4.vk.pgp_verbose_mime"
+      sha256 "fbd58cd5466c71e39a3854dc6b91e05ac7ea410eec49148a0eb6ef8aa584789b"
     end
   end
 
